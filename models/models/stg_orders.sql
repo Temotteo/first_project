@@ -1,11 +1,11 @@
 with source as (
 
     select
-        ORDER_ID            as order_id,
-        CUSTOMER_ID         as customer_id,
-        try_to_timestamp(ORDER_TS) as order_timestamp,
-        lower(ORDER_STATUS) as order_status,
-        try_to_number(ORDER_TOTAL) as order_total
+        ORDER_ID                as order_id,
+        CUSTOMER_ID             as customer_id,
+        try_to_timestamp(ORDER_TS)     as order_timestamp,
+        lower(ORDER_STATUS)     as order_status,
+        try_to_number(ORDER_TOTAL)     as order_total
     from {{ source('raw', 'TABLETEST') }}
 
 ),
